@@ -33,9 +33,9 @@ public class EmiratesTest extends BaseTest {
         map.put("arrivalCity2", "Las Vegas (LAS)");
 
         return new Object[][] {
-            {new OneWay(driver), map},
-            {new TwoWay(driver), map},
-            {new MultiWay(driver), map},
+            {new OneWay(), map},
+            {new TwoWay(), map},
+            {new MultiWay(), map},
         };
     }
 

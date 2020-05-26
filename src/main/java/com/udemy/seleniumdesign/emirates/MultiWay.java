@@ -30,12 +30,7 @@ public class MultiWay implements FlightSearch {
     @FindBy(id = "ctl00_c_CtWNW_txtD2")
     private WebElement departureDate2;
 
-    private final DatePicker datePicker;
-
-    public MultiWay(final WebDriver driver) {
-        this.datePicker = PageFactory.initElements(driver, DatePicker.class);
-        PageFactory.initElements(driver, this);
-    }
+    private DatePicker datePicker;
 
     @Override
     public void search(Map<String, String> searchDetails) {
@@ -48,4 +43,10 @@ public class MultiWay implements FlightSearch {
         this.departureDate2.click();
         this.datePicker.selectRandomFutureDate();
     }
+
+    @Override
+    public void setDatePicker(DatePicker datePicker) {
+        this.datePicker = datePicker;
+    }
+
 }

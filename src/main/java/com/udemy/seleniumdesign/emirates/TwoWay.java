@@ -24,12 +24,7 @@ public class TwoWay implements FlightSearch {
     @FindBy(id = "dvReturnDate")
     private WebElement returnDate;
 
-    private final DatePicker datePicker;
-
-    public TwoWay(final WebDriver driver) {
-        this.datePicker = PageFactory.initElements(driver, DatePicker.class);
-        PageFactory.initElements(driver, this);
-    }
+    private DatePicker datePicker;
 
     @Override
     public void search(Map<String, String> searchDetails) {
@@ -40,5 +35,10 @@ public class TwoWay implements FlightSearch {
         this.arrivalCity.sendKeys(searchDetails.get("arrivalCity"));
         this.returnDate.click();
         this.datePicker.selectRandomFutureDate();
+    }
+
+    @Override
+    public void setDatePicker(DatePicker datePicker) {
+        this.datePicker = datePicker;
     }
 }

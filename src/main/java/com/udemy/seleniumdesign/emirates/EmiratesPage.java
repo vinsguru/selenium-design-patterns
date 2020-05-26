@@ -15,8 +15,6 @@ public class EmiratesPage {
 
     public EmiratesPage(final WebDriver driver){
         this.driver = driver;
-        PageFactory.initElements(driver, this);
-        this.flightSearch = PageFactory.initElements(driver, TwoWay.class);
     }
 
     public void goTo(){
@@ -29,6 +27,8 @@ public class EmiratesPage {
 
     public void setFlightSearch(FlightSearch flightSearch){
         this.flightSearch = flightSearch;
+        PageFactory.initElements(driver, this.flightSearch);
+        this.flightSearch.setDatePicker(PageFactory.initElements(driver, DatePicker.class));
     }
 
     public void searchForFlights(Map<String, String> searchDetails){

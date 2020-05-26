@@ -21,12 +21,7 @@ public class OneWay implements FlightSearch {
     @FindBy(id = "ctl00_c_CtWNW_dvDepartDate")
     private WebElement departureDate;
 
-    private final DatePicker datePicker;
-
-    public OneWay(final WebDriver driver) {
-        this.datePicker = PageFactory.initElements(driver, DatePicker.class);
-        PageFactory.initElements(driver, this);
-    }
+    private DatePicker datePicker;
 
     @Override
     public void search(Map<String, String> searchDetails) {
@@ -35,6 +30,11 @@ public class OneWay implements FlightSearch {
         this.arrivalCity.sendKeys(searchDetails.get("arrivalCity"));
         this.departureDate.click();
         this.datePicker.selectToday();
-
     }
+
+    @Override
+    public void setDatePicker(DatePicker datePicker) {
+        this.datePicker = datePicker;
+    }
+
 }
