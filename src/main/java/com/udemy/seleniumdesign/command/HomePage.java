@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 public class HomePage {
 
     private final WebDriver driver;
+    private final WebDriverWait wait;
 
     //buttons
     @FindBy(css = "div.button-box button.btn-info")
@@ -53,11 +55,13 @@ public class HomePage {
 
     public HomePage(final WebDriver driver){
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, 30);
         PageFactory.initElements(driver, this);
     }
 
     public void goTo(){
         this.driver.get("https://wrappixel.com/demos/admin-templates/admin-pro/main/ui-notification.html");
+        this.wait.until((d) -> this.infoBtn.isDisplayed());
     }
 
     public List<ElementValidator> getElementValidators(){
