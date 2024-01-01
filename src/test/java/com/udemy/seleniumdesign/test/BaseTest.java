@@ -1,8 +1,9 @@
 package com.udemy.seleniumdesign.test;
 
 import com.google.common.util.concurrent.Uninterruptibles;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -14,10 +15,8 @@ public class BaseTest {
 
     @BeforeTest
     public void setupDriver(){
-        System.out.println(
-                "*********************   Create WebDriver Instance - Do not forget system property   *******************"
-        );
-        this.driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+        this.driver = new ChromeDriver();
     }
 
 

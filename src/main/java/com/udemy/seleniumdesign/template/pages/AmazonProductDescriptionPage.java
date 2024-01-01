@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class AmazonProductDescriptionPage {
 
     private WebDriver driver;
@@ -16,7 +18,7 @@ public class AmazonProductDescriptionPage {
 
     public AmazonProductDescriptionPage(WebDriver driver){
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 30);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         PageFactory.initElements(driver, this);
     }
 

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -21,12 +22,12 @@ class GoogleEnglish extends GooglePage {
     @FindBy(name = "btnK")
     private WebElement searchBtn;
 
-    @FindBy(css = "div.rc")
+    @FindBy(css = "#rso div")
     private List<WebElement> results;
 
     public GoogleEnglish(final WebDriver driver){
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 30);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         PageFactory.initElements(driver, this);
     }
 

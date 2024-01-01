@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class EBayShopping extends ShoppingTemplate {
 
     private WebDriver driver;
@@ -27,7 +29,7 @@ public class EBayShopping extends ShoppingTemplate {
     public EBayShopping(WebDriver driver, String product){
         this.driver = driver;
         this.product = product;
-        this.wait = new WebDriverWait(driver, 30);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         PageFactory.initElements(driver, this);
     }
 

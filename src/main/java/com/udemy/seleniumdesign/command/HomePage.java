@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
@@ -55,7 +56,7 @@ public class HomePage {
 
     public HomePage(final WebDriver driver){
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 30);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         PageFactory.initElements(driver, this);
     }
 
