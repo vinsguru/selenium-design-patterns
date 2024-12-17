@@ -61,7 +61,7 @@ public class HomePage {
     }
 
     public void goTo(){
-        this.driver.get("https://wrappixel.com/demos/admin-templates/admin-pro/main/ui-notification.html");
+        this.driver.get("https://vins-udemy.s3.amazonaws.com/ds/admin-template/admin-template.html");
         this.wait.until((d) -> this.infoBtn.isDisplayed());
     }
 

@@ -41,6 +41,8 @@ public class GoogleTest extends BaseTest {
 
         googleResultPage.getNavigationBar().goToNews();
 
+        googleResultPage.getNavigationBar().clickOnTools();
+
         System.out.println(
                 googleResultPage.getResultStat().getStat()
         );

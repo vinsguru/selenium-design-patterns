@@ -16,6 +16,9 @@ public class NavigationBar extends AbstractComponent {
     @FindBy(linkText = "News")
     private WebElement news;
 
+    @FindBy(id = "hdtb-tls")
+    private WebElement tools;
+
     public NavigationBar(WebDriver driver) {
         super(driver);
     }
@@ -26,6 +29,10 @@ public class NavigationBar extends AbstractComponent {
 
     public void goToNews(){
         this.news.click();
+    }
+
+    public void clickOnTools(){
+        this.tools.click();
     }
 
     @Override
